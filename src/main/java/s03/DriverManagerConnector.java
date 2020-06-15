@@ -31,7 +31,7 @@ public class DriverManagerConnector {
 
     public static String getSchemaName() {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
-            String user = conn.getCatalog();
+            String user = conn.getCatalog(); //ritorna schema
             if (user == null) {
                 user = conn.getSchema();
             }
